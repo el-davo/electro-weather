@@ -1,8 +1,10 @@
 import {fork} from 'redux-saga/effects';
-import {fetchTodoListSaga} from './todo/list/fetch-list.saga';
+import {fetchSearchPlacesSaga} from './search/saga/search.saga';
+import {fetchWeatherSaga} from './weather/saga/fetch-weather.saga';
 
 export function* rootSaga() {
   yield [
-    fork(fetchTodoListSaga)
+    fork(fetchSearchPlacesSaga),
+    fork(fetchWeatherSaga)
   ];
 }
