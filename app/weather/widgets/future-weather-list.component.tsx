@@ -1,3 +1,4 @@
+import Avatar from 'material-ui/Avatar';
 import { List, ListItem } from 'material-ui/List';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
@@ -25,7 +26,7 @@ export class FutureWeatherListComponent extends React.Component<Props, any> {
                                     key={key}
                                     primaryText={forecast.day}
                                     secondaryText={forecast.text}
-                                    leftIcon={<WeatherIconComponent currentWeather={this.props.currentWeather} />} />;
+                                    leftAvatar={<Avatar icon={<WeatherIconComponent weather={forecast.code} />} />} />;
                             })
                         }
                     </List>

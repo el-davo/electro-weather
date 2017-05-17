@@ -1,5 +1,5 @@
-import {CheckerPlugin} from 'awesome-typescript-loader';
-import {join, resolve} from 'path';
+import { CheckerPlugin } from 'awesome-typescript-loader';
+import { join, resolve } from 'path';
 
 export const baseConfig = {
   module: {
@@ -20,6 +20,10 @@ export const baseConfig = {
       {
         test: /\.json$/,
         loader: 'json-loader'
+      },
+      { 
+        test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, 
+        loader: "file-loader?name=fonts/[name].[ext]" 
       }
     ]
   },

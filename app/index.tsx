@@ -9,6 +9,8 @@ import './app.css';
 import { routes } from './routes';
 import { configureStore } from './store/configureStore';
 
+import '../node_modules/weather-icons/css/weather-icons.css';
+
 injectTapEventPlugin();
 
 const store = configureStore.configureStore();
