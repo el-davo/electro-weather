@@ -1,9 +1,10 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {Search} from "../search.state";
-import {SearchOverlayComponent} from "./search-overlay.component";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Place, Search } from '../search.state';
+import { SearchOverlayComponent } from "./search-overlay.component";
 import * as searchActions from "../search.actions";
+import * as weatherActions from '../../weather/weather.actions';
 
 interface Props {
     search: Search;
@@ -12,13 +13,17 @@ interface Props {
 
 interface Actions {
     hideSearchOverlay();
+    fetchSearchPlaces(term: string);
+    fetchCurrentWeather(place: Place);
 }
 
 const SearchOverlayContainer: React.StatelessComponent<Props> = (props: Props) => {
     return (
         <SearchOverlayComponent
             search={props.search}
-            hideSearchOverlay={props.actions.hideSearchOverlay}/>
+            hideSearchOverlay={props.actions.hideSearchOverlay}
+            fetchSearchPlaces={props.actions.fetchSearchPlaces}
+            fetchCurrentWeather={props.actions.fetchCurrentWeather} />
     );
 };
 
@@ -30,7 +35,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators({...searchActions}, dispatch)
+        actions: bindActionCreators({ ...searchActions, ...weatherActions }, dispatch)
     };
 }
 

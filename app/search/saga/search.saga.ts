@@ -1,10 +1,15 @@
-import {delay, takeLatest} from 'redux-saga';
-import {call, put} from 'redux-saga/effects';
-import {FETCH_SEARCH_PLACES} from '../search.action-types';
-import {fetchSearchPlacesFailed, updateSearchResults} from '../search.actions';
-import {searchPlaces} from './search.service' ;
+import { delay, takeLatest } from 'redux-saga';
+import { call, put } from 'redux-saga/effects';
+import { FETCH_SEARCH_PLACES } from '../search.action-types';
+import { fetchSearchPlacesFailed, updateSearchResults } from '../search.actions';
+import { searchPlaces } from './search.service';
 
 function* fetch({term}) {
+
+  if (term.length === 0) {
+    return;
+  }
+
   try {
     yield call(delay, 100);
 
