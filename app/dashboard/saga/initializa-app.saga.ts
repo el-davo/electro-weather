@@ -10,7 +10,7 @@ function* initialize() {
     try {
         let places: Places = yield call(getSavedPlaces);
 
-        updatePlaces(places);
+        yield put(updatePlaces(places));
 
         yield put(initializeAppSuccess());
     } catch (err) {
