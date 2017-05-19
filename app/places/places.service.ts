@@ -2,7 +2,7 @@ import {readFile, writeFile} from "jsonfile";
 import {getSavedPlacesFilePath, ensureAppIntegrity} from "../common/utils.service";
 import {Place} from "../search/search.state";
 
-export function savePlaces(places: Place[]) {
+export function savePlaces(places: {[key: string]: Place}) {
     return new Promise(async(resolve, reject) => {
         if (!await ensureAppIntegrity()) {
             reject('Files are not as they should be :(');
@@ -21,7 +21,7 @@ export function getSavedPlaces(): Promise<Place[]> {
         }
 
         readFile(getSavedPlacesFilePath(), (err, settings) => {
-            err ? reject(err) : resolve(settings);
+            err ? resolve({}) : resolve(settings);
         });
     });
 }

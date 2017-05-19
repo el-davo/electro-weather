@@ -17,6 +17,8 @@ export interface Place {
     geometry: Geometry;
     icon: string;
     id: string;
+    place_id: string;
+    reference: string;
 }
 
 interface Geometry {

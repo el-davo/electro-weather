@@ -18,7 +18,7 @@ function* select({place}: {place: Place}) {
 
         let places: Place[] = yield call(getSavedPlaces);
 
-        yield call(savePlaces, [...places, place]);
+        yield call(savePlaces, {...places, [place.id]: place});
 
         yield put(hideSearchOverlay());
 
