@@ -10,5 +10,4 @@ export function fetchWeather(place: Place) {
     throwResponseError: true,
     strictSSL: false
   });
-
 }

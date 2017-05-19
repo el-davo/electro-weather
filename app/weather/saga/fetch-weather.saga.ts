@@ -4,8 +4,9 @@ import {FETCH_WEATHER} from '../weather.action-types';
 import {fetchCurrentWeatherFailed, updateWeather} from '../weather.actions';
 import { Weather } from '../weather.state';
 import {fetchWeather} from './weather.service' ;
+import {Place} from "../../search/search.state";
 
-function* fetch({place}) {
+function* fetch({place}: {place: Place}) {
   try {
     const weather: Weather = yield call(fetchWeather, place);
 

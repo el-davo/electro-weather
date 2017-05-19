@@ -1,5 +1,5 @@
-import * as actionTypes from './search.action-types';
-import {Place, search, Search} from './search.state';
+import * as actionTypes from "./search.action-types";
+import {Place, search, Search} from "./search.state";
 
 interface Action {
     type: string;
@@ -16,6 +16,14 @@ export function searchReducer(state: Search = search, action: Action): Search {
             return {...state, showSearchOverlay: true};
         case actionTypes.HIDE_SEARCH_OVERLAY:
             return {...state, showSearchOverlay: false};
+        case actionTypes.SELECT_PLACE:
+            return {...state, isCheckingPlaceHasWeather: true};
+        case actionTypes.PLACE_SAVED:
+            return {...state, isCheckingPlaceHasWeather: false};
+        case actionTypes.PLACE_HAS_NO_WEATHER:
+            return {...state, isCheckingPlaceHasWeather: false};
+        case actionTypes.SELECT_PLACE_FAILED:
+            return {...state, isCheckingPlaceHasWeather: false};
         default:
             return state;
     }

@@ -1,11 +1,10 @@
 import * as React from "react";
-import { Place, Search } from '../search.state';
-import { List, ListItem } from 'material-ui/List';
+import {Place, Search} from "../search.state";
+import {List, ListItem} from "material-ui/List";
 
 interface Props {
     search: Search;
-    hideSearchOverlay();
-    fetchCurrentWeather(place: Place);
+    selectPlace(place: Place);
 }
 
 export class SearchResultsListComponent extends React.Component<Props, any> {
@@ -13,17 +12,11 @@ export class SearchResultsListComponent extends React.Component<Props, any> {
     constructor(props, context) {
         super(props, context);
 
-        this._hideSearchOverlay = this._hideSearchOverlay.bind(this);
-        this._fetchCurrentWeather = this._fetchCurrentWeather.bind(this);
+        this._selectPlace = this._selectPlace.bind(this);
     }
 
-    _hideSearchOverlay() {
-        this.props.hideSearchOverlay();
-    }
-
-    _fetchCurrentWeather(place: Place) {
-        this.props.fetchCurrentWeather(place);
-        this.props.hideSearchOverlay();
+    _selectPlace(place: Place) {
+        this.props.selectPlace(place);
     }
 
     render() {
@@ -33,9 +26,9 @@ export class SearchResultsListComponent extends React.Component<Props, any> {
                     this.props.search.places.map((place, key) => {
                         return <ListItem
                             key={key}
-                            onTouchTap={() => this._fetchCurrentWeather(place)}
+                            onTouchTap={() => this._selectPlace(place)}
                             primaryText={place.formatted_address}
-                            secondaryText={place.geometry.viewport.northeast.lat} />
+                            secondaryText={place.geometry.viewport.northeast.lat}/>
                     })
                 }
             </List>

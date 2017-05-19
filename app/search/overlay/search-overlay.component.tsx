@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Place, Search } from '../search.state';
-import { SearchResultsListComponent } from './search-results-list.component';
+import {Place, Search} from "../search.state";
+import {SearchResultsListComponent} from "./search-results-list.component";
 
 interface Props {
     search: Search;
     hideSearchOverlay();
     fetchSearchPlaces(term: string);
-    fetchCurrentWeather(place: Place);
+    selectPlace(place: Place);
 }
 
 export class SearchOverlayComponent extends React.Component<Props, any> {
@@ -31,18 +31,17 @@ export class SearchOverlayComponent extends React.Component<Props, any> {
             <div className={this.props.search.showSearchOverlay ? 'morphsearch open' : 'morphsearch'}>
                 <form className="morphsearch-form">
                     <input ref="searchInput"
-                        className="morphsearch-input"
-                        type="search"
-                        onChange={this._fetchSearchPlaces}
-                        placeholder="Search..." />
+                           className="morphsearch-input"
+                           type="search"
+                           onChange={this._fetchSearchPlaces}
+                           placeholder="Search..."/>
                 </form>
                 <div className="morphsearch-content">
                     <SearchResultsListComponent
                         search={this.props.search}
-                        hideSearchOverlay={this.props.hideSearchOverlay}
-                        fetchCurrentWeather={this.props.fetchCurrentWeather} />
+                        selectPlace={this.props.selectPlace}/>
                 </div>
-                <span className="morphsearch-close" onClick={this._hideSearchOverlay} />
+                <span className="morphsearch-close" onClick={this._hideSearchOverlay}/>
             </div>
         );
     }

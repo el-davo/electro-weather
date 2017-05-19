@@ -1,12 +1,14 @@
 export const search = {
     isFetchingSearch: false,
     showSearchOverlay: false,
+    isCheckingPlaceHasWeather: false,
     places: []
 } as Search;
 
 export interface Search {
     isFetchingSearch: boolean;
     showSearchOverlay: boolean;
+    isCheckingPlaceHasWeather: boolean;
     places: Place[];
 }
 

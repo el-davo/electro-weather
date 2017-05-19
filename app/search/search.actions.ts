@@ -20,3 +20,19 @@ export function showSearchOverlay() {
 export function hideSearchOverlay() {
     return {type: actionTypes.HIDE_SEARCH_OVERLAY};
 }
+
+export function selectPlace(place: Place) {
+    return {type: actionTypes.SELECT_PLACE, place};
+}
+
+export function placeSaved() {
+    return {type: actionTypes.PLACE_SAVED};
+}
+
+export function placeHasNoWeather() {
+    return {type: actionTypes.PLACE_HAS_NO_WEATHER};
+}
+
+export function selectPlaceFailed() {
+    return {type: actionTypes.SELECT_PLACE_FAILED};
+}
