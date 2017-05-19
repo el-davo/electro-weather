@@ -15,8 +15,6 @@ function* fetch({term}) {
 
     const places = yield call(searchPlaces, term);
 
-    console.log(places);
-
     yield put(updateSearchResults(places.results));
   } catch (err) {
     yield put(fetchSearchPlacesFailed());
