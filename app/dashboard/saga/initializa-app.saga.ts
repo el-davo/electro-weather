@@ -18,6 +18,6 @@ function* initialize() {
     }
 }
 
-export function* initializeAppSaga {
+export function* initializeAppSaga() {
     yield* takeLatest(INITIALIZE_APP, initialize);
 }

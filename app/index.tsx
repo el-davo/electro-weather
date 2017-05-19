@@ -1,4 +1,4 @@
-import { INITIALIZE_APP } from './dashboard/dashboard.action-types';
+import { initializeApp } from './dashboard/dashboard.actions';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as React from 'react';
 import { render } from 'react-dom';
@@ -17,7 +17,7 @@ injectTapEventPlugin();
 const store = configureStore.configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
 
-store.dispatch({ type: INITIALIZE_APP });
+store.dispatch(initializeApp());
 
 render(
   <MuiThemeProvider>
