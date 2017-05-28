@@ -6,9 +6,9 @@ export const dashboard = {
 
 export interface Dashboard {
     isInitializingApp: boolean;
-    places: Places
+    places: Places;
 }
 
 export interface Places {
-    [key: string]: Place
+    [key: string]: Place;
 }

@@ -21,9 +21,9 @@ export const baseConfig = {
         test: /\.json$/,
         loader: 'json-loader'
       },
-      { 
-        test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/, 
-        loader: "file-loader?name=fonts/[name].[ext]" 
+      {
+        test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
+        loader: 'file-loader?name=fonts/[name].[ext]'
       }
     ]
   },

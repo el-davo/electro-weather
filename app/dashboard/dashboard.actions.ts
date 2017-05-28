@@ -1,5 +1,7 @@
-import { Places } from './dashboard.state';
+import { Place } from '../search/search.state';
+import { Weather } from '../weather/weather.state';
 import * as actionTypes from './dashboard.action-types';
+import { Places } from './dashboard.state';
 
 export function initializeApp() {
     return { type: actionTypes.INITIALIZE_APP };
@@ -15,4 +17,16 @@ export function initializeAppFailed() {
 
 export function updatePlaces(places: Places) {
     return { type: actionTypes.UPDATE_PLACES, places };
+}
+
+export function fetchWeather(place: Place) {
+    return { type: actionTypes.FETCH_WEATHER, place };
+}
+
+export function updateWeather(place: Place, weather: Weather) {
+    return { type: actionTypes.UPDATE_WEATHER, place, weather };
+}
+
+export function fetchWeatherFailed(place: Place) {
+    return { type: actionTypes.FETCH_WEATHER_FAILED };
 }

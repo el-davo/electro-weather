@@ -1,5 +1,5 @@
-import * as actionTypes from "./search.action-types";
-import {Place, search, Search} from "./search.state";
+import * as actionTypes from './search.action-types';
+import {Place, search, Search} from './search.state';
 
 interface Action {
     type: string;

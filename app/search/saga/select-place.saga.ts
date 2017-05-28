@@ -1,12 +1,12 @@
-import {takeLatest} from "redux-saga";
-import {call, put} from "redux-saga/effects";
-import {SELECT_PLACE} from "../search.action-types";
-import {selectPlaceFailed, placeHasNoWeather, hideSearchOverlay} from "../search.actions";
-import {updateWeather} from "../../weather/weather.actions";
-import {fetchWeather} from "../../weather/saga/weather.service";
-import {getSavedPlaces, savePlaces} from "../../places/places.service";
-import {Place} from "../search.state";
-import {Weather} from "../../weather/weather.state";
+import {takeLatest} from 'redux-saga';
+import {call, put} from 'redux-saga/effects';
+import {getSavedPlaces, savePlaces} from '../../places/places.service';
+import {fetchWeather} from '../../weather/saga/weather.service';
+import {updateWeather} from '../../weather/weather.actions';
+import {Weather} from '../../weather/weather.state';
+import {SELECT_PLACE} from '../search.action-types';
+import {hideSearchOverlay, placeHasNoWeather, selectPlaceFailed} from '../search.actions';
+import {Place} from '../search.state';
 
 function* select({place}: {place: Place}) {
     try {
@@ -16,7 +16,7 @@ function* select({place}: {place: Place}) {
             return yield put(placeHasNoWeather());
         }
 
-        let places: Place[] = yield call(getSavedPlaces);
+        const places: Place[] = yield call(getSavedPlaces);
 
         yield call(savePlaces, {...places, [place.id]: place});
 

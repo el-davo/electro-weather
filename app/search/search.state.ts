@@ -1,3 +1,4 @@
+import { Weather } from '../weather/weather.state';
 export const search = {
     isFetchingSearch: false,
     showSearchOverlay: false,
@@ -19,6 +20,9 @@ export interface Place {
     id: string;
     place_id: string;
     reference: string;
+    isLoadingWeather: boolean;
+    isLoadingFailed: boolean;
+    weather: Weather;
 }
 
 interface Geometry {
