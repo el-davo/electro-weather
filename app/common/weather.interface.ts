@@ -1,17 +1,3 @@
-export const currentWeather = {
-  isFetchingWeather: false,
-  weather: {
-    query: {
-      count: 0
-    }
-  }
-} as CurrentWeather;
-
-export interface CurrentWeather {
-  isFetchingWeather: boolean;
-  weather: Weather;
-}
-
 export interface Weather {
   query: Query;
 }

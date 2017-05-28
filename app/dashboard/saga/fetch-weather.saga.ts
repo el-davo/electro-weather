@@ -1,7 +1,7 @@
+import { Weather } from '../../common/weather.interface';
 import { takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { Place } from '../../search/search.state';
-import { Weather } from '../../weather/weather.state';
 import { FETCH_WEATHER } from '../dashboard.action-types';
 import { fetchWeatherFailed, updateWeather } from '../dashboard.actions';
 import { fetchWeather } from './weather.service';

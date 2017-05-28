@@ -1,4 +1,4 @@
-import { Weather } from '../../weather/weather.state';
+import { Weather } from '../../common/weather.interface';
 import Avatar from 'material-ui/Avatar';
 import { List, ListItem } from 'material-ui/List';
 import * as React from 'react';

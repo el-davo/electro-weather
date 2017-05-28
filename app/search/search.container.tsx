@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as weatherActions from '../weather/weather.actions';
+import * as dashboardActions from '../dashboard/dashboard.actions';
 import * as searchActions from './search.actions';
 import {SearchComponent} from './search.component';
 import {Search} from './search.state';
@@ -33,7 +33,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({...searchActions, ...weatherActions}, dispatch)
+    actions: bindActionCreators({...searchActions, ...dashboardActions}, dispatch)
   };
 }
 

@@ -1,5 +1,5 @@
+import { Weather } from '../common/weather.interface';
 import { Place } from '../search/search.state';
-import { Weather } from '../weather/weather.state';
 import * as actionTypes from './dashboard.action-types';
 import { dashboard, Dashboard, Places } from './dashboard.state';
 

@@ -1,4 +1,4 @@
-import { Weather } from '../../weather/weather.state';
+import { Weather } from '../../common/weather.interface';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
 

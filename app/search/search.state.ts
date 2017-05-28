@@ -1,4 +1,4 @@
-import { Weather } from '../weather/weather.state';
+import { Weather } from '../common/weather.interface';
 export const search = {
     isFetchingSearch: false,
     showSearchOverlay: false,
