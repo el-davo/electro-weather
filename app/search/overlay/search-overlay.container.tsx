@@ -1,10 +1,10 @@
-import * as React from "react";
-import {connect} from "react-redux";
-import {bindActionCreators} from "redux";
-import {Place, Search} from "../search.state";
-import {SearchOverlayComponent} from "./search-overlay.component";
-import * as searchActions from "../search.actions";
-import * as weatherActions from "../../weather/weather.actions";
+import * as React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as dashboardActions from '../../dashboard/dashboard.actions';
+import * as searchActions from '../search.actions';
+import {Place, Search} from '../search.state';
+import {SearchOverlayComponent} from './search-overlay.component';
 
 interface Props {
     search: Search;
@@ -35,7 +35,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators({...searchActions, ...weatherActions}, dispatch)
+        actions: bindActionCreators({...searchActions, ...dashboardActions}, dispatch)
     };
 }
 

@@ -1,4 +1,3 @@
-import { initializeApp } from './dashboard/dashboard.actions';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as React from 'react';
 import { render } from 'react-dom';
@@ -7,9 +6,11 @@ import { hashHistory, Router } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
 import './app.css';
+import { initializeApp } from './dashboard/dashboard.actions';
 import { routes } from './routes';
 import { configureStore } from './store/configureStore';
 
+import '../node_modules/slick-carousel/slick/slick.css';
 import '../node_modules/weather-icons/css/weather-icons.css';
 
 injectTapEventPlugin();

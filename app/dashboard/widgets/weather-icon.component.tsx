@@ -1,6 +1,5 @@
 import * as React from 'react';
 import WeatherIcons from 'react-weathericons';
-import { CurrentWeather } from '../weather.state';
 
 // https://developer.yahoo.com/weather/documentation.html#item
 const weatherMap = [

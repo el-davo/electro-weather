@@ -1,6 +1,6 @@
-import * as React from "react";
-import {Place, Search} from "../search.state";
-import {List, ListItem} from "material-ui/List";
+import {List, ListItem} from 'material-ui/List';
+import * as React from 'react';
+import {Place, Search} from '../search.state';
 
 interface Props {
     search: Search;
@@ -28,7 +28,7 @@ export class SearchResultsListComponent extends React.Component<Props, any> {
                             key={key}
                             onTouchTap={() => this._selectPlace(place)}
                             primaryText={place.formatted_address}
-                            secondaryText={place.geometry.viewport.northeast.lat}/>
+                            secondaryText={place.geometry.viewport.northeast.lat}/>;
                     })
                 }
             </List>

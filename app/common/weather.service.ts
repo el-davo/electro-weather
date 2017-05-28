@@ -1,5 +1,5 @@
+import { Place } from '../search/search.state';
 import {json} from 'web-request';
-import {Place} from '../../search/search.state';
 
 export function fetchWeather(place: Place) {
   return json(`https://query.yahooapis.com/v1/public/yql`, {
