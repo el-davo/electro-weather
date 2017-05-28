@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { LoadingComponent } from '../../common/loading.component';
 import { Place } from '../../search/search.state';
+import { PlaceNameComponent } from '../widgets/place-name.component';
 import { CurrentTemperatureComponent } from '../widgets/current-temperature.component';
 import { CurrentWeatherDescriptionComponent } from '../widgets/current-weather-description.component';
 import { FutureWeatherListComponent } from '../widgets/future-weather-list.component';
@@ -39,6 +40,7 @@ export class WeatherComponent extends React.Component<Props, any> {
                 {
                     !this.props.place.isLoadingWeather && this.props.place.weather ? (
                         <div>
+                            <PlaceNameComponent place={this.props.place} />
                             <CurrentTemperatureComponent weather={this.props.place.weather} />
                             <CurrentWeatherDescriptionComponent weather={this.props.place.weather} />
                             <FutureWeatherListComponent weather={this.props.place.weather} />

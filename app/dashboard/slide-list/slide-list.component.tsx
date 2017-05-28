@@ -18,7 +18,7 @@ function NextArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, position: 'absolute', top: 50, right: 0 }}
+            style={{ ...style, position: 'absolute', top: 75, right: 0 }}
             onClick={onClick}
         >
             <IconButton tooltip="Next">
@@ -34,7 +34,7 @@ function PrevArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, position: 'absolute', top: 50, left: 0 }}
+            style={{ ...style, position: 'absolute', top: 75, left: 0 }}
             onClick={onClick}
         >
             <IconButton tooltip="Previous">

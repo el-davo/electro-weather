@@ -7,6 +7,14 @@ interface Props {
     showSearchOverlay();
 }
 
+const style = {
+    appBar: {
+        background: 'none',
+        position: 'absolute',
+        boxShadow: 'none'
+    }
+}
+
 export class NavBarComponent extends React.Component<Props, any> {
 
     constructor(props, context) {
@@ -22,6 +30,8 @@ export class NavBarComponent extends React.Component<Props, any> {
     render() {
         return (
             <AppBar
+                style={style.appBar}
+                showMenuIconButton={false}
                 iconElementRight={<IconButton onTouchTap={this._showSearchOverlay}><AddButtonIcon /></IconButton>}
             />
         );
