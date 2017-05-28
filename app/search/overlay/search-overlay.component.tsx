@@ -1,6 +1,7 @@
 import * as React from 'react';
-import {Place, Search} from '../search.state';
-import {SearchResultsListComponent} from './search-results-list.component';
+import { Place, Search } from '../search.state';
+import { SearchResultsListComponent } from './search-results-list.component';
+import { SearchOverlayCloseButtonComponent } from './search-overlay-close-button.component';
 
 interface Props {
     search: Search;
@@ -31,17 +32,23 @@ export class SearchOverlayComponent extends React.Component<Props, any> {
             <div className={this.props.search.showSearchOverlay ? 'morphsearch open' : 'morphsearch'}>
                 <form className="morphsearch-form">
                     <input ref="searchInput"
-                           className="morphsearch-input"
-                           type="search"
-                           onChange={this._fetchSearchPlaces}
-                           placeholder="Search..."/>
+                        className="morphsearch-input"
+                        type="search"
+                        onChange={this._fetchSearchPlaces}
+                        placeholder="Search..." />
                 </form>
                 <div className="morphsearch-content">
-                    <SearchResultsListComponent
-                        search={this.props.search}
-                        selectPlace={this.props.selectPlace}/>
+                    {
+                        this.props.search.places.length > 0 ? (
+                            <SearchResultsListComponent
+                                search={this.props.search}
+                                selectPlace={this.props.selectPlace} />
+                        ) : (
+                                <div></div>
+                            )
+                    }
                 </div>
-                <span className="morphsearch-close" onClick={this._hideSearchOverlay}/>
+                <SearchOverlayCloseButtonComponent hideSearchOverlay={this.props.hideSearchOverlay} />
             </div>
         );
     }
