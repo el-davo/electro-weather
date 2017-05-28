@@ -8,6 +8,8 @@ interface Action {
     places?: Places;
     place: Place;
     weather: Weather;
+    slideNext?: Function;
+    slidePrev?: Function;
 }
 
 export function dashboardReducer(state: Dashboard = dashboard, action: Action): Dashboard {
@@ -26,6 +28,8 @@ export function dashboardReducer(state: Dashboard = dashboard, action: Action): 
             return { ...state, places: { ...state.places, [action.place.id]: { ...action.place, weather: action.weather, isLoadingWeather: false, isLoadingFailed: false } } };
         case actionTypes.FETCH_WEATHER_FAILED:
             return { ...state, places: { ...state.places, [action.place.id]: { ...action.place, weather: action.weather, isLoadingWeather: false, isLoadingFailed: true } } };
+        case actionTypes.SET_SLIDER_FUNCTIONS:
+            return { ...state, slideNext: action.slideNext, slidePrev: action.slidePrev };
         default:
             return state;
     }

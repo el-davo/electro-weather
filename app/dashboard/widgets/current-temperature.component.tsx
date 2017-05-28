@@ -18,7 +18,7 @@ interface Props {
   weather: Weather;
 }
 
-export class CurrentWeatherComponent extends React.Component<Props, any> {
+export class CurrentTemperatureComponent extends React.Component<Props, any> {
 
   constructor(props, context) {
     super(props, context);
@@ -35,13 +35,6 @@ export class CurrentWeatherComponent extends React.Component<Props, any> {
           <Col xs={12} sm={12} md={12}>
             <div style={style.celsius}>
               {this._farenToCel(parseFloat(this.props.weather.query.results.channel.item.condition.temp))}&deg;
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} sm={12} md={12}>
-            <div style={style.condition}>
-              {this.props.weather.query.results.channel.item.condition.text}
             </div>
           </Col>
         </Row>

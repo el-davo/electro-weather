@@ -25,8 +25,6 @@ function* select({place}: {place: Place}) {
         yield put(updateWeather(place, weather));
 
     } catch (err) {
-        console.log(err);
-
         yield put(selectPlaceFailed());
     }
 }

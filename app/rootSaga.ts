@@ -1,6 +1,6 @@
 import { fork } from 'redux-saga/effects';
 import { fetchWeatherSaga } from './dashboard/saga/fetch-weather.saga';
-import { initializeAppSaga } from './dashboard/saga/initializa-app.saga';
+import { initializeAppSaga } from './dashboard/saga/initialize-app.saga';
 import { fetchSearchPlacesSaga } from './search/saga/search.saga';
 import { selectPlaceSaga } from './search/saga/select-place.saga';
 

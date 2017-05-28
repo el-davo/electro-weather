@@ -23,7 +23,8 @@ export class DashboardComponent extends React.Component<Props, any> {
                         <div>
                             <NavbarContainer />
                             <SearchOverlayContainer />
-                            <SlideListComponent dashboard={this.props.dashboard} />
+                            <SlideListComponent
+                                dashboard={this.props.dashboard} />
                         </div>
                     ) : (
                             <SplashScreenComponent />

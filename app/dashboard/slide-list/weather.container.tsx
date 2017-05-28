@@ -12,11 +12,17 @@ interface Props {
 
 interface Actions {
     fetchWeather(place: Place);
+    slideNext();
+    slidePrev();
 }
 
 const WeatherContainer: React.StatelessComponent<Props> = (props) => {
     return (
-        <WeatherComponent place={props.place} fetchWeather={props.actions.fetchWeather} />
+        <WeatherComponent
+            place={props.place}
+            fetchWeather={props.actions.fetchWeather}
+            slideNext={props.actions.slideNext}
+            slidePrev={props.actions.slidePrev} />
     );
 };
 
@@ -28,7 +34,7 @@ function mapStateToProps(state, myProps) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators({...dashboardActions}, dispatch)
+        actions: bindActionCreators({ ...dashboardActions }, dispatch)
     };
 }
 
