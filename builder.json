@@ -1,6 +1,6 @@
 {
   "win": {
-    "title": "boilerplate",
+    "title": "electro-weather",
     "version": "0.0.1",
     "publisher": "el-davo",
     "icon": "dist/app/img/favicon.ico",
