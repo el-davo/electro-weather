@@ -17,7 +17,7 @@ export class FutureWeatherListComponent extends React.Component<Props, any> {
 
     render() {
         return (
-            <Grid fluid>
+            <Grid fluid style={{ padding: 0 }}>
                 <Col xs={12} sm={12} md={12}>
                     <List>
                         {
