@@ -138,34 +138,6 @@ input[type="search"] { /* reset normalize */
     transition-delay: 0.5s;
 }
 
-.morphsearch-close::before,
-.morphsearch-close::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    border-radius: 3px;
-    opacity: 0.2;
-    background: #000;
-}
-
-.morphsearch-close:hover.morphsearch-close::before,
-.morphsearch-close:hover.morphsearch-close::after {
-    opacity: 1;
-}
-
-.morphsearch-close::before {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.morphsearch-close::after {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
 .morphsearch-content {
     color: #333;
     margin-top: 4.5em;

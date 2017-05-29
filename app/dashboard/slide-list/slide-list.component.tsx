@@ -7,6 +7,7 @@ import { LoadingComponent } from '../../common/loading.component';
 import { Place } from '../../search/search.state';
 import { Dashboard, Places } from '../dashboard.state';
 import WeatherContainer from './weather.container';
+import { EmptyListComponent } from './empty-list.component';
 
 interface Props {
     dashboard: Dashboard;
@@ -58,23 +59,27 @@ export class SlideListComponent extends React.Component<Props, any> {
 
     constructor(props, context) {
         super(props, context);
-
-        this.state = {};
     }
 
     render() {
         return (
             <div>
-                <ReactSlick ref={slider => this.state.slider = slider} {...sliderSettings}>
-                    {
-                        Object.keys(this.props.dashboard.places).map((key) => {
-                            return <div key={key}>
-                                <WeatherContainer
-                                    place={this.props.dashboard.places[key]} />
-                            </div>;
-                        })
-                    }
-                </ReactSlick>
+                {
+                    Object.keys(this.props.dashboard.places).length > 0 ? (
+                        <ReactSlick {...sliderSettings}>
+                            {
+                                Object.keys(this.props.dashboard.places).map((key) => {
+                                    return <div key={key}>
+                                        <WeatherContainer
+                                            place={this.props.dashboard.places[key]} />
+                                    </div>;
+                                })
+                            }
+                        </ReactSlick>
+                    ) : (
+                            <EmptyListComponent />
+                        )
+                }
             </div>
         );
     }

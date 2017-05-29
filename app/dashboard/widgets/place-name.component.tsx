@@ -1,6 +1,7 @@
 import { Place } from '../../search/search.state';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
+import { darkWhite } from 'material-ui/styles/colors';
 
 interface Props {
     place: Place;
@@ -11,7 +12,7 @@ const style = {
         marginTop: 17,
         textAlign: 'center',
         fontSize: 25,
-        color: 'white'
+        color: darkWhite
     }
 }
 

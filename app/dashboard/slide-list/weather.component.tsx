@@ -13,6 +13,12 @@ interface Props {
     slidePrev();
 }
 
+const style = {
+    loading: {
+        paddingTop: 200
+    }
+}
+
 export class WeatherComponent extends React.Component<Props, any> {
 
     constructor(props, context) {
@@ -46,7 +52,9 @@ export class WeatherComponent extends React.Component<Props, any> {
                             <FutureWeatherListComponent weather={this.props.place.weather} />
                         </div>
                     ) : (
-                            <div>Loading...</div>
+                            <div style={style.loading}>
+                                <LoadingComponent />
+                            </div>
                         )
                 }
             </div>

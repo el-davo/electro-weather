@@ -12,11 +12,23 @@ interface Props {
 
 export class SearchOverlayComponent extends React.Component<Props, any> {
 
+    refs: {
+        searchInput: HTMLInputElement
+    };
+
     constructor(props, context) {
         super(props, context);
 
         this._hideSearchOverlay = this._hideSearchOverlay.bind(this);
         this._fetchSearchPlaces = this._fetchSearchPlaces.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        nextProps.search.showSearchOverlay ? this._searchFocus() : null;
+    }
+
+    _searchFocus() {
+        setTimeout(() => this.refs.searchInput.focus(), 500);
     }
 
     _hideSearchOverlay() {
@@ -37,14 +49,14 @@ export class SearchOverlayComponent extends React.Component<Props, any> {
                         onChange={this._fetchSearchPlaces}
                         placeholder="Search..." />
                 </form>
-                <div className="morphsearch-content">
+                <div>
                     {
-                        this.props.search.places.length > 0 ? (
+                        this.props.search.hasSearched ? (
                             <SearchResultsListComponent
                                 search={this.props.search}
                                 selectPlace={this.props.selectPlace} />
                         ) : (
-                                <div></div>
+                                <div />
                             )
                     }
                 </div>

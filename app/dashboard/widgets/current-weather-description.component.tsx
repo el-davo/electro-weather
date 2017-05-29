@@ -1,16 +1,17 @@
 import { Weather } from '../../common/weather.interface';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
+import { darkWhite } from 'material-ui/styles/colors';
 
 const style = {
   celsius: {
     textAlign: 'center',
     fontSize: 100,
-    color: 'white'
+    color: darkWhite
   },
   condition: {
     textAlign: 'center',
-    color: 'white'
+    color: darkWhite
   }
 };
 

@@ -2,6 +2,7 @@ import { Weather } from '../common/weather.interface';
 export const search = {
     isFetchingSearch: false,
     showSearchOverlay: false,
+    hasSearched: false,
     isCheckingPlaceHasWeather: false,
     places: []
 } as Search;
@@ -9,6 +10,7 @@ export const search = {
 export interface Search {
     isFetchingSearch: boolean;
     showSearchOverlay: boolean;
+    hasSearched: boolean;
     isCheckingPlaceHasWeather: boolean;
     places: Place[];
 }
