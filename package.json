@@ -1,6 +1,6 @@
 {
   "name": "electro-weather",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "electro-weather",
   "main": "main.js",
   "scripts": {
