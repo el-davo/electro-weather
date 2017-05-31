@@ -1,5 +1,5 @@
 import { Weather } from '../../common/weather.interface';
-import { takeEvery } from 'redux-saga';
+import { delay, takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { Place } from '../../search/search.state';
 import { FETCH_WEATHER } from '../dashboard.action-types';
@@ -9,6 +9,8 @@ import { fetchWeather } from './weather.service';
 function* fetch({place}: { place: Place }) {
   try {
     const weather: Weather = yield call(fetchWeather, place);
+
+    yield call(delay, 600);
 
     yield put(updateWeather(place, weather));
   } catch (err) {

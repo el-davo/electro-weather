@@ -12,6 +12,8 @@ function* initialize() {
 
         yield put(updatePlaces(places));
 
+        yield call(delay, 2000);
+
         yield put(initializeAppSuccess());
     } catch (err) {
         yield put(initializeAppFailed());

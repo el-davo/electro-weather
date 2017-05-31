@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { darkWhite } from 'material-ui/styles/colors';
+import * as Loader from 'halogen/ClipLoader';
 
 const style = {
-  textAlign: 'center',
-  color: darkWhite
+  textAlign: 'center'
 }
+
+const SIZE = '25px';
 
 export class LoadingComponent extends React.Component<any, any> {
 
@@ -15,7 +17,7 @@ export class LoadingComponent extends React.Component<any, any> {
   render() {
     return (
       <div style={style}>
-        Loading...
+        <Loader color={darkWhite} size={SIZE} />
       </div>
     );
   }
