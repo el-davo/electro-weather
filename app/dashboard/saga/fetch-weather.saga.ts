@@ -10,7 +10,7 @@ function* fetch({place}: { place: Place }) {
   try {
     const weather: Weather = yield call(fetchWeather, place);
 
-    yield call(delay, 600);
+    yield call(delay, 500);
 
     yield put(updateWeather(place, weather));
   } catch (err) {
