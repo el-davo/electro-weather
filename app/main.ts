@@ -18,7 +18,7 @@ app.on('ready', () => {
   mainWindow = new BrowserWindow({
     show: false,
     width: process.env.NODE_ENV === 'development' ? 1000 : 600,
-    height: 600
+    height: 550
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);

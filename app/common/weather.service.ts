@@ -11,3 +11,7 @@ export function fetchWeather(place: Place) {
     strictSSL: false
   });
 }
+
+export function farenToCel(farenheight: number) {
+    return Math.round((farenheight - 32) * (5 / 9));
+}

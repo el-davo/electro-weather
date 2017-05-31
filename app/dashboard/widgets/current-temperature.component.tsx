@@ -1,3 +1,4 @@
+import { farenToCel } from '../../common/weather.service';
 import { Weather } from '../../common/weather.interface';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
@@ -25,17 +26,13 @@ export class CurrentTemperatureComponent extends React.Component<Props, any> {
     super(props, context);
   }
 
-  _farenToCel(farenheight: number) {
-    return Math.round((farenheight - 32) * (5 / 9));
-  }
-
   render() {
     return (
       <Grid fluid>
         <Row>
           <Col xs={12} sm={12} md={12}>
             <div style={style.celsius}>
-              {this._farenToCel(parseFloat(this.props.weather.query.results.channel.item.condition.temp))}&deg;
+              {farenToCel(parseFloat(this.props.weather.query.results.channel.item.condition.temp))}&deg;
             </div>
           </Col>
         </Row>

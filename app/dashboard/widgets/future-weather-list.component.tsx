@@ -1,12 +1,26 @@
+import { darkWhite } from 'material-ui/styles/colors';
 import { Weather } from '../../common/weather.interface';
 import Avatar from 'material-ui/Avatar';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import { List, ListItem } from 'material-ui/List';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
 import { WeatherIconComponent } from './weather-icon.component';
+import { farenToCel } from '../../common/weather.service';
 
 interface Props {
     weather: Weather;
+}
+
+const style = {
+    table: {
+        background: 'none',
+        color: darkWhite
+    },
+    tableRow: {
+        color: darkWhite,
+        fontWeight: 'bold'
+    }
 }
 
 export class FutureWeatherListComponent extends React.Component<Props, any> {
@@ -19,17 +33,25 @@ export class FutureWeatherListComponent extends React.Component<Props, any> {
         return (
             <Grid fluid style={{ padding: 0 }}>
                 <Col xs={12} sm={12} md={12}>
-                    <List>
-                        {
-                            this.props.weather.query.results.channel.item.forecast.slice(0, 4).map((forecast, key) => {
-                                return <ListItem
-                                    key={key}
-                                    primaryText={forecast.day}
-                                    secondaryText={forecast.text}
-                                    leftAvatar={<Avatar icon={<WeatherIconComponent weather={forecast.code} />} />} />;
-                            })
-                        }
-                    </List>
+                    <Table style={style.table}>
+                        <TableBody displayRowCheckbox={false}>
+                            {
+                                this.props.weather.query.results.channel.item.forecast.slice(0, 5).map((forecast, key) => {
+                                    return <TableRow key={key} style={style.tableRow} selectable={false}>
+                                        <TableRowColumn>
+                                            <Avatar icon={<WeatherIconComponent weather={forecast.code} />} />
+                                        </TableRowColumn>
+                                        <TableRowColumn>
+                                            {forecast.day}
+                                        </TableRowColumn>
+                                        <TableRowColumn style={{ textAlign: 'center' }}>
+                                            {farenToCel(parseInt(forecast.high))}&deg;
+                                        </TableRowColumn>
+                                    </TableRow>
+                                })
+                            }
+                        </TableBody>
+                    </Table>
                 </Col>
 
             </Grid>

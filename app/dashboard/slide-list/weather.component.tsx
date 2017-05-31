@@ -49,6 +49,7 @@ export class WeatherComponent extends React.Component<Props, any> {
                             <PlaceNameComponent place={this.props.place} />
                             <CurrentTemperatureComponent weather={this.props.place.weather} />
                             <CurrentWeatherDescriptionComponent weather={this.props.place.weather} />
+                            <br />
                             <FutureWeatherListComponent weather={this.props.place.weather} />
                         </div>
                     ) : (
