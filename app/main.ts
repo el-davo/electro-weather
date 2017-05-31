@@ -17,7 +17,7 @@ app.on('ready', () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: process.env.NODE_ENV === 'development' ? 1000 : 600,
+    width: process.env.NODE_ENV === 'development' ? 1000 : 500,
     height: 550
   });
 
