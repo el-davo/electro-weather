@@ -1,9 +1,9 @@
-import { Weather } from '../../common/weather.interface';
 import {takeLatest} from 'redux-saga';
 import {call, put} from 'redux-saga/effects';
-import {getSavedPlaces, savePlaces} from '../../places/places.service';
+import { Weather } from '../../common/weather.interface';
 import {fetchWeather} from '../../common/weather.service';
 import {updateWeather} from '../../dashboard/dashboard.actions';
+import {getSavedPlaces, savePlaces} from '../../places/places.service';
 import {SELECT_PLACE} from '../search.action-types';
 import {hideSearchOverlay, placeHasNoWeather, selectPlaceFailed} from '../search.actions';
 import {Place} from '../search.state';

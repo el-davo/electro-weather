@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import * as dashboardActions from './dashboard.actions';
 import { DashboardComponent } from './dashboard.component';
 import { Dashboard } from './dashboard.state';
-import * as dashboardActions from './dashboard.actions';
 
 interface Props {
     dashboard: Dashboard;

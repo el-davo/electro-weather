@@ -13,7 +13,7 @@ const style = {
         position: 'absolute',
         boxShadow: 'none'
     }
-}
+};
 
 export class NavBarComponent extends React.Component<Props, any> {
 

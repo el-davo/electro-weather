@@ -1,20 +1,21 @@
+import IconButton from 'material-ui/IconButton';
+import ArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
+import ArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 import * as React from 'react';
 import ReactSlick from 'react-slick';
-import IconButton from 'material-ui/IconButton';
-import ArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
-import ArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 import { LoadingComponent } from '../../common/loading.component';
+import CurrentLocationContainer from '../../current-location/current-location.container';
 import { Place } from '../../search/search.state';
 import { Dashboard, Places } from '../dashboard.state';
-import WeatherContainer from './weather.container';
 import { EmptyListComponent } from './empty-list.component';
+import WeatherContainer from './weather.container';
 
 interface Props {
     dashboard: Dashboard;
 }
 
 function NextArrow(props) {
-    const { className, style, onClick } = props
+    const { className, style, onClick } = props;
 
     return (
         <div
@@ -30,7 +31,7 @@ function NextArrow(props) {
 }
 
 function PrevArrow(props) {
-    const { className, style, onClick } = props
+    const { className, style, onClick } = props;
 
     return (
         <div
@@ -64,22 +65,19 @@ export class SlideListComponent extends React.Component<Props, any> {
     render() {
         return (
             <div>
-                {
-                    Object.keys(this.props.dashboard.places).length > 0 ? (
-                        <ReactSlick {...sliderSettings}>
-                            {
-                                Object.keys(this.props.dashboard.places).map((key) => {
-                                    return <div key={key}>
-                                        <WeatherContainer
-                                            place={this.props.dashboard.places[key]} />
-                                    </div>;
-                                })
-                            }
-                        </ReactSlick>
-                    ) : (
-                            <EmptyListComponent />
-                        )
-                }
+                <ReactSlick {...sliderSettings}>
+                    <div>
+                        <CurrentLocationContainer />
+                    </div>
+                    {
+                        Object.keys(this.props.dashboard.places).map((key) => {
+                            return <div key={key}>
+                                <WeatherContainer
+                                    place={this.props.dashboard.places[key]} />
+                            </div>;
+                        })
+                    }
+                </ReactSlick>
             </div>
         );
     }

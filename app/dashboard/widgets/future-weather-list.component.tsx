@@ -1,12 +1,12 @@
-import { darkWhite } from 'material-ui/styles/colors';
-import { Weather } from '../../common/weather.interface';
 import Avatar from 'material-ui/Avatar';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import { List, ListItem } from 'material-ui/List';
+import { darkWhite } from 'material-ui/styles/colors';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
-import { WeatherIconComponent } from './weather-icon.component';
+import { Weather } from '../../common/weather.interface';
 import { farenToCel } from '../../common/weather.service';
+import { WeatherIconComponent } from './weather-icon.component';
 
 interface Props {
     weather: Weather;
@@ -21,7 +21,7 @@ const style = {
         color: darkWhite,
         fontWeight: 'bold'
     }
-}
+};
 
 export class FutureWeatherListComponent extends React.Component<Props, any> {
 
@@ -47,7 +47,7 @@ export class FutureWeatherListComponent extends React.Component<Props, any> {
                                         <TableRowColumn style={{ textAlign: 'center' }}>
                                             {farenToCel(parseInt(forecast.high))}&deg;
                                         </TableRowColumn>
-                                    </TableRow>
+                                    </TableRow>;
                                 })
                             }
                         </TableBody>

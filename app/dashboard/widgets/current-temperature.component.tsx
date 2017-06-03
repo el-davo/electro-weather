@@ -1,8 +1,8 @@
-import { farenToCel } from '../../common/weather.service';
-import { Weather } from '../../common/weather.interface';
+import { darkWhite } from 'material-ui/styles/colors';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
-import { darkWhite } from 'material-ui/styles/colors';
+import { Weather } from '../../common/weather.interface';
+import { farenToCel } from '../../common/weather.service';
 
 const style = {
   celsius: {

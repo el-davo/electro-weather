@@ -1,8 +1,8 @@
 import { List, ListItem } from 'material-ui/List';
-import * as React from 'react';
-import { Place, Search } from '../search.state';
-import { LoadingComponent } from '../../common/loading.component';
 import { darkWhite } from 'material-ui/styles/colors';
+import * as React from 'react';
+import { LoadingComponent } from '../../common/loading.component';
+import { Place, Search } from '../search.state';
 
 interface Props {
     search: Search;
@@ -21,7 +21,7 @@ const style = {
     loading: {
         paddingTop: 100
     }
-}
+};
 
 export class SearchResultsListComponent extends React.Component<Props, any> {
 

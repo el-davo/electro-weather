@@ -1,7 +1,7 @@
-import { Weather } from '../../common/weather.interface';
+import { darkWhite } from 'material-ui/styles/colors';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
-import { darkWhite } from 'material-ui/styles/colors';
+import { Weather } from '../../common/weather.interface';
 
 const style = {
   celsius: {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Place, Search } from '../search.state';
-import { SearchResultsListComponent } from './search-results-list.component';
 import { SearchOverlayCloseButtonComponent } from './search-overlay-close-button.component';
+import { SearchResultsListComponent } from './search-results-list.component';
 
 interface Props {
     search: Search;

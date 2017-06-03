@@ -6,8 +6,8 @@ import { dashboard, Dashboard, Places } from './dashboard.state';
 interface Action {
     type: string;
     places?: Places;
-    place: Place;
-    weather: Weather;
+    place?: Place;
+    weather?: Weather;
     slideNext?: Function;
     slidePrev?: Function;
 }

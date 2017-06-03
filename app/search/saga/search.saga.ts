@@ -8,7 +8,7 @@ function* fetch({term}) {
 
   if (term.length === 0) {
     yield put(fetchSearchPlacesFailed());
-    
+
     return;
   }
 

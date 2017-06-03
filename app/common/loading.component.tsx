@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { darkWhite } from 'material-ui/styles/colors';
 import * as Loader from 'halogen/ClipLoader';
+import { darkWhite } from 'material-ui/styles/colors';
+import * as React from 'react';
 
 const style = {
   textAlign: 'center'
-}
+};
 
 const SIZE = '25px';
 

@@ -1,4 +1,5 @@
 import { fork } from 'redux-saga/effects';
+import { fetchCurrentLocationWeatherSaga } from './current-location/saga/fetch-current-location-weather.saga';
 import { fetchWeatherSaga } from './dashboard/saga/fetch-weather.saga';
 import { initializeAppSaga } from './dashboard/saga/initialize-app.saga';
 import { fetchSearchPlacesSaga } from './search/saga/search.saga';
@@ -9,6 +10,7 @@ export function* rootSaga() {
         fork(initializeAppSaga),
         fork(fetchSearchPlacesSaga),
         fork(fetchWeatherSaga),
-        fork(selectPlaceSaga)
+        fork(selectPlaceSaga),
+        fork(fetchCurrentLocationWeatherSaga)
     ];
 }

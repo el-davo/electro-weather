@@ -1,7 +1,7 @@
-import * as React from 'react';
 import IconButton from 'material-ui/IconButton';
-import StopIcon from 'material-ui/svg-icons/navigation/close';
 import { darkWhite } from 'material-ui/styles/colors';
+import StopIcon from 'material-ui/svg-icons/navigation/close';
+import * as React from 'react';
 import { Place, Search } from '../search.state';
 import { SearchResultsListComponent } from './search-results-list.component';
 
@@ -20,7 +20,7 @@ const style = {
         width: 25,
         height: 25
     }
-}
+};
 
 export class SearchOverlayCloseButtonComponent extends React.Component<Props, any> {
 

@@ -1,10 +1,10 @@
-import { Place } from '../../search/search.state';
+import { darkWhite } from 'material-ui/styles/colors';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
-import { darkWhite } from 'material-ui/styles/colors';
+import { Place } from '../../search/search.state';
 
 interface Props {
-    place: Place;
+    address: string;
 }
 
 const style = {
@@ -14,7 +14,7 @@ const style = {
         fontSize: 25,
         color: darkWhite
     }
-}
+};
 
 export class PlaceNameComponent extends React.Component<Props, any> {
 
@@ -27,7 +27,7 @@ export class PlaceNameComponent extends React.Component<Props, any> {
             <Grid fluid>
                 <Col xs={12} sm={12} md={12}>
                     <div style={style.placeName}>
-                        {this.props.place.formatted_address}
+                        {this.props.address}
                     </div>
                 </Col>
             </Grid>
