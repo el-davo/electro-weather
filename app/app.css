@@ -79,28 +79,6 @@ body {
     font-size: 3em;
 }
 
-/* placeholder */
-.morphsearch-input::-webkit-input-placeholder {
-    color: #c2c2c2;
-}
-
-.morphsearch-input:-moz-placeholder {
-    color: #c2c2c2;
-}
-
-.morphsearch-input::-moz-placeholder {
-    color: #c2c2c2;
-}
-
-.morphsearch-input:-ms-input-placeholder {
-    color: #c2c2c2;
-}
-
-/* hide placeholder when active in Chrome */
-.gn-search:focus::-webkit-input-placeholder {
-    color: transparent;
-}
-
 input[type="search"] { /* reset normalize */
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -109,6 +87,10 @@ input[type="search"] { /* reset normalize */
 .morphsearch-input:focus,
 .morphsearch-submit:focus {
     outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
 }
 
 .morphsearch-close {
