@@ -3,6 +3,7 @@
     "tslint:latest"
   ],
   "rules": {
+    "no-unused-expression": false,
     "object-literal-sort-keys": false,
     "callable-types": true,
     "interface-name": false,

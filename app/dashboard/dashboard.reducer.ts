@@ -8,8 +8,6 @@ interface Action {
     places?: Places;
     place?: Place;
     weather?: Weather;
-    slideNext?: Function;
-    slidePrev?: Function;
 }
 
 export function dashboardReducer(state: Dashboard = dashboard, action: Action): Dashboard {
@@ -23,13 +21,40 @@ export function dashboardReducer(state: Dashboard = dashboard, action: Action): 
         case actionTypes.UPDATE_PLACES:
             return { ...state, places: action.places };
         case actionTypes.FETCH_WEATHER:
-            return { ...state, places: { ...state.places, [action.place.id]: { ...action.place, isLoadingWeather: true, isLoadingFailed: false } } };
+            return {
+                ...state, places: {
+                    ...state.places,
+                    [action.place.id]: {
+                        ...action.place,
+                        isLoadingWeather: true,
+                        isLoadingFailed: false
+                    }
+                }
+            };
         case actionTypes.UPDATE_WEATHER:
-            return { ...state, places: { ...state.places, [action.place.id]: { ...action.place, weather: action.weather, isLoadingWeather: false, isLoadingFailed: false } } };
+            return {
+                ...state, places: {
+                    ...state.places,
+                    [action.place.id]: {
+                        ...action.place,
+                        weather: action.weather,
+                        isLoadingWeather: false,
+                        isLoadingFailed: false
+                    }
+                }
+            };
         case actionTypes.FETCH_WEATHER_FAILED:
-            return { ...state, places: { ...state.places, [action.place.id]: { ...action.place, weather: action.weather, isLoadingWeather: false, isLoadingFailed: true } } };
-        case actionTypes.SET_SLIDER_FUNCTIONS:
-            return { ...state, slideNext: action.slideNext, slidePrev: action.slidePrev };
+            return {
+                ...state, places: {
+                    ...state.places,
+                    [action.place.id]: {
+                        ...action.place,
+                        weather: action.weather,
+                        isLoadingWeather: false,
+                        isLoadingFailed: true
+                    }
+                }
+            };
         default:
             return state;
     }

@@ -45,7 +45,7 @@ export class FutureWeatherListComponent extends React.Component<Props, any> {
                                             {forecast.day}
                                         </TableRowColumn>
                                         <TableRowColumn style={{ textAlign: 'center' }}>
-                                            {farenToCel(parseInt(forecast.high))}&deg;
+                                            {farenToCel(parseInt(forecast.high, 10))}&deg;
                                         </TableRowColumn>
                                     </TableRow>;
                                 })

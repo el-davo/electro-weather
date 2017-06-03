@@ -1,6 +1,6 @@
-import { CurrentLocationData } from './current-location.state';
 import { Weather } from '../common/weather.interface';
 import * as actionTypes from './current-location.action-types';
+import { CurrentLocationData } from './current-location.state';
 
 export function fetchCurrentLocationWeather() {
     return { type: actionTypes.FETCH_CURRENT_LOCATION_WEATHER };
