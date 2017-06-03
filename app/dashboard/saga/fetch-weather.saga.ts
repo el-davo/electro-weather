@@ -1,7 +1,7 @@
-import { fetchWeatherByPlace } from '../../common/weather.service';
 import { delay, takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { Weather } from '../../common/weather.interface';
+import { fetchWeatherByPlace } from '../../common/weather.service';
 import { Place } from '../../search/search.state';
 import { FETCH_WEATHER } from '../dashboard.action-types';
 import { fetchWeatherFailed, updateWeather } from '../dashboard.actions';

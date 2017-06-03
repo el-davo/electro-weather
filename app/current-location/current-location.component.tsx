@@ -6,8 +6,8 @@ import { CurrentWeatherDescriptionComponent } from '../dashboard/widgets/current
 import { FutureWeatherListComponent } from '../dashboard/widgets/future-weather-list.component';
 import { PlaceNameComponent } from '../dashboard/widgets/place-name.component';
 import SearchOverlayContainer from '../search/overlay/search-overlay.container';
-import { CurrentLocation } from './current-location.state';
 import { CurrentLocationErrorComponent } from './current-location-error.component';
+import { CurrentLocation } from './current-location.state';
 
 interface Props {
     currentLocation: CurrentLocation;
