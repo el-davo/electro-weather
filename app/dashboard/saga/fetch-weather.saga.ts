@@ -1,14 +1,14 @@
+import { fetchWeatherByPlace } from '../../common/weather.service';
 import { delay, takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import { Weather } from '../../common/weather.interface';
 import { Place } from '../../search/search.state';
 import { FETCH_WEATHER } from '../dashboard.action-types';
 import { fetchWeatherFailed, updateWeather } from '../dashboard.actions';
-import { fetchWeather } from './weather.service';
 
 function* fetch({place}: { place: Place }) {
   try {
-    const weather: Weather = yield call(fetchWeather, place);
+    const weather: Weather = yield call(fetchWeatherByPlace, place);
 
     yield call(delay, 500);
 
