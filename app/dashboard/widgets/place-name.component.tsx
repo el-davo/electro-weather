@@ -11,7 +11,7 @@ const style = {
     placeName: {
         marginTop: 17,
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: '4vw',
         color: darkWhite
     }
 };
