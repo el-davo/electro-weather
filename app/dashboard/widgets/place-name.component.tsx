@@ -9,7 +9,7 @@ interface Props {
 
 const style = {
     placeName: {
-        marginTop: 17,
+        marginTop: 21,
         textAlign: 'center',
         fontSize: '4vw',
         color: darkWhite
