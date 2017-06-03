@@ -7,6 +7,7 @@ import { FutureWeatherListComponent } from '../dashboard/widgets/future-weather-
 import { PlaceNameComponent } from '../dashboard/widgets/place-name.component';
 import SearchOverlayContainer from '../search/overlay/search-overlay.container';
 import { CurrentLocation } from './current-location.state';
+import { CurrentLocationErrorComponent } from './current-location-error.component';
 
 interface Props {
     currentLocation: CurrentLocation;
@@ -34,17 +35,22 @@ export class CurrentLocationComponent extends React.Component<Props, any> {
             <div>
                 {
                     !this.props.currentLocation.isFetchingCurrentLocation ? (
-                        <div>
-                            <PlaceNameComponent address={
-                                this.props.currentLocation.currentLocationData.city.length > 0 ?
-                                    this.props.currentLocation.currentLocationData.city :
-                                    this.props.currentLocation.currentLocationData.country_name
-                            } />
-                            <CurrentTemperatureComponent weather={this.props.currentLocation.weather} />
-                            <CurrentWeatherDescriptionComponent weather={this.props.currentLocation.weather} />
-                            <br />
-                            <FutureWeatherListComponent weather={this.props.currentLocation.weather} />
-                        </div>
+                        this.props.currentLocation.hasCurrentLocationWeather ? (
+                            <div>
+                                <PlaceNameComponent address={
+                                    this.props.currentLocation.currentLocationData.city.length > 0 ?
+                                        this.props.currentLocation.currentLocationData.city :
+                                        this.props.currentLocation.currentLocationData.country_name
+                                } />
+                                <CurrentTemperatureComponent weather={this.props.currentLocation.weather} />
+                                <CurrentWeatherDescriptionComponent weather={this.props.currentLocation.weather} />
+                                <br />
+                                <FutureWeatherListComponent weather={this.props.currentLocation.weather} />
+                            </div>
+                        ) : (
+                                <CurrentLocationErrorComponent />
+                            )
+
                     ) : (
                             <div style={style.loading}>
                                 <LoadingComponent />

@@ -2,12 +2,14 @@ import { Weather } from '../common/weather.interface';
 
 export const currentLocation = {
     isFetchingCurrentLocation: true,
+    hasCurrentLocationWeather: false,
     currentLocationData: {},
     weather: {}
 } as CurrentLocation;
 
 export interface CurrentLocation {
     isFetchingCurrentLocation: boolean;
+    hasCurrentLocationWeather: boolean;
     currentLocationData: CurrentLocationData;
     weather: Weather;
 }
