@@ -34,7 +34,7 @@ app.on('ready', () => {
   });
 
   // Tray
-  let tray = new Tray(join(__dirname, process.env.NODE_ENV === 'production' ? 'app' : '', 'img', 'favicon.ico'));
+  const tray = new Tray(join(__dirname, process.env.NODE_ENV === 'production' ? 'app' : '', 'img', 'favicon.ico'));
   const contextMenu = Menu.buildFromTemplate([
     {
       label: 'Close',
@@ -50,8 +50,8 @@ app.on('ready', () => {
   tray.setToolTip('Electro Weather');
 
   tray.on('click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
-  })
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
+  });
 
   if (process.env.NODE_ENV === 'development') {
     mainWindow.openDevTools();
