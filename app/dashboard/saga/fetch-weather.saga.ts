@@ -6,11 +6,16 @@ import { Place } from '../../search/search.state';
 import { FETCH_WEATHER } from '../dashboard.action-types';
 import { fetchWeatherFailed, updateWeather } from '../dashboard.actions';
 
-function* fetch({place}: { place: Place }) {
+function* fetch({ place }: { place: Place }) {
   try {
     const weather: Weather = yield call(fetchWeatherByPlace, place);
 
     yield call(delay, 500);
+
+    weather.query.results.channel.item.forecast.map(forecast => {
+      forecast.high = +forecast.high;
+      forecast.low = +forecast.low;
+    });
 
     yield put(updateWeather(place, weather));
   } catch (err) {

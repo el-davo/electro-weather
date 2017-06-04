@@ -5,7 +5,6 @@ import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowCol
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
 import { Weather } from '../../common/weather.interface';
-import { farenToCel } from '../../common/weather.service';
 import { WeatherIconComponent } from './weather-icon.component';
 
 interface Props {
@@ -45,7 +44,7 @@ export class FutureWeatherListComponent extends React.Component<Props, any> {
                                             {forecast.day}
                                         </TableRowColumn>
                                         <TableRowColumn style={{ textAlign: 'center' }}>
-                                            {farenToCel(parseInt(forecast.high, 10))}&deg;
+                                            {forecast.high}&deg;
                                         </TableRowColumn>
                                     </TableRow>;
                                 })

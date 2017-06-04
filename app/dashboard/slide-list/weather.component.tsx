@@ -3,8 +3,8 @@ import { LoadingComponent } from '../../common/loading.component';
 import { Place } from '../../search/search.state';
 import { CurrentTemperatureComponent } from '../widgets/current-temperature.component';
 import { CurrentWeatherDescriptionComponent } from '../widgets/current-weather-description.component';
-import { FutureWeatherListComponent } from '../widgets/future-weather-list.component';
 import { PlaceNameComponent } from '../widgets/place-name.component';
+import { FutureWeatherGraphComponent } from '../widgets/graph/future-weather-graph.component';
 
 interface Props {
     place: Place;
@@ -50,7 +50,7 @@ export class WeatherComponent extends React.Component<Props, any> {
                             <CurrentTemperatureComponent weather={this.props.place.weather} />
                             <CurrentWeatherDescriptionComponent weather={this.props.place.weather} />
                             <br />
-                            <FutureWeatherListComponent weather={this.props.place.weather} />
+                            <FutureWeatherGraphComponent weather={this.props.place.weather} />
                         </div>
                     ) : (
                             <div style={style.loading}>
