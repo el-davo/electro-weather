@@ -37,7 +37,7 @@ app.on('ready', () => {
   const tray = new Tray(join(__dirname, process.env.NODE_ENV === 'production' ? 'app' : '', 'img', 'favicon.ico'));
   const contextMenu = Menu.buildFromTemplate([
     {
-      label: 'Close',
+      label: 'Exit',
       click() {
         willQuitApp = true;
         app.quit();
