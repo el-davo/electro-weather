@@ -1,7 +1,7 @@
 {
   "win": {
     "title": "electro-weather",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "el-davo",
     "icon": "dist/app/img/favicon.ico",
     "verbosity": 1

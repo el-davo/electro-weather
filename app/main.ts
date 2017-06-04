@@ -1,17 +1,13 @@
-import { app, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, Menu, Tray } from 'electron';
 import * as contextMenu from 'electron-context-menu';
+import { join } from 'path';
 
 let menu;
 let template;
 let mainWindow = null;
+let willQuitApp = false;
 
 contextMenu();
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
 
 app.on('ready', () => {
 
@@ -28,9 +24,34 @@ app.on('ready', () => {
     mainWindow.focus();
   });
 
-  mainWindow.on('closed', () => {
-    mainWindow = null;
+  mainWindow.on('close', (e) => {
+    if (willQuitApp) {
+      window = null;
+    } else {
+      e.preventDefault();
+      mainWindow.hide();
+    }
   });
+
+  // Tray
+  let tray = new Tray(join(__dirname, process.env.NODE_ENV === 'production' ? 'app' : '', 'img', 'favicon.ico'));
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Close',
+      click() {
+        willQuitApp = true;
+        app.quit();
+      }
+    }
+  ]);
+
+  tray.setContextMenu(contextMenu);
+
+  tray.setToolTip('Electro Weather');
+
+  tray.on('click', () => {
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+  })
 
   if (process.env.NODE_ENV === 'development') {
     mainWindow.openDevTools();
