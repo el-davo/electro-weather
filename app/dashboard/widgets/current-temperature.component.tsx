@@ -2,7 +2,6 @@ import { darkWhite } from 'material-ui/styles/colors';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
 import { Weather } from '../../common/weather.interface';
-import { farenToCel } from '../../common/weather.service';
 
 const style = {
   celsius: {
@@ -32,7 +31,7 @@ export class CurrentTemperatureComponent extends React.Component<Props, any> {
         <Row>
           <Col xs={12} sm={12} md={12}>
             <div style={style.celsius}>
-              {farenToCel(parseFloat(this.props.weather.query.results.channel.item.condition.temp))}&deg;
+              {this.props.weather.query.results.channel.item.condition.temp}&deg;
             </div>
           </Col>
         </Row>

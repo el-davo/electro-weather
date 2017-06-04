@@ -68,12 +68,12 @@ interface Condition {
   text: string;
 }
 
-interface Forecast {
+export interface Forecast {
   code: string;
   date: string;
   day: string;
-  high: string;
-  low: string;
+  high: number;
+  low: number;
   text: string;
 }
 

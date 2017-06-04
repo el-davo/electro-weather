@@ -48,7 +48,7 @@ function PrevArrow(props) {
 
 const sliderSettings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -64,21 +64,19 @@ export class SlideListComponent extends React.Component<Props, any> {
 
     render() {
         return (
-            <div>
-                <ReactSlick {...sliderSettings}>
-                    <div>
-                        <CurrentLocationContainer />
-                    </div>
-                    {
-                        Object.keys(this.props.dashboard.places).map((key) => {
-                            return <div key={key}>
-                                <WeatherContainer
-                                    place={this.props.dashboard.places[key]} />
-                            </div>;
-                        })
-                    }
-                </ReactSlick>
-            </div>
+            <ReactSlick {...sliderSettings}>
+                <div>
+                    <CurrentLocationContainer />
+                </div>
+                {
+                    Object.keys(this.props.dashboard.places).map((key) => {
+                        return <div key={key}>
+                            <WeatherContainer
+                                place={this.props.dashboard.places[key]} />
+                        </div>;
+                    })
+                }
+            </ReactSlick>
         );
     }
 }

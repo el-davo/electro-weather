@@ -3,7 +3,7 @@ import { LoadingComponent } from '../common/loading.component';
 import NavbarContainer from '../common/nav-bar.container';
 import { CurrentTemperatureComponent } from '../dashboard/widgets/current-temperature.component';
 import { CurrentWeatherDescriptionComponent } from '../dashboard/widgets/current-weather-description.component';
-import { FutureWeatherListComponent } from '../dashboard/widgets/future-weather-list.component';
+import { FutureWeatherGraphComponent } from '../dashboard/widgets/graph/future-weather-graph.component';
 import { PlaceNameComponent } from '../dashboard/widgets/place-name.component';
 import SearchOverlayContainer from '../search/overlay/search-overlay.container';
 import { CurrentLocationErrorComponent } from './current-location-error.component';
@@ -45,7 +45,7 @@ export class CurrentLocationComponent extends React.Component<Props, any> {
                                 <CurrentTemperatureComponent weather={this.props.currentLocation.weather} />
                                 <CurrentWeatherDescriptionComponent weather={this.props.currentLocation.weather} />
                                 <br />
-                                <FutureWeatherListComponent weather={this.props.currentLocation.weather} />
+                                <FutureWeatherGraphComponent weather={this.props.currentLocation.weather} />
                             </div>
                         ) : (
                                 <CurrentLocationErrorComponent />
