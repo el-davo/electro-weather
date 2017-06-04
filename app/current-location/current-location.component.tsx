@@ -3,11 +3,11 @@ import { LoadingComponent } from '../common/loading.component';
 import NavbarContainer from '../common/nav-bar.container';
 import { CurrentTemperatureComponent } from '../dashboard/widgets/current-temperature.component';
 import { CurrentWeatherDescriptionComponent } from '../dashboard/widgets/current-weather-description.component';
+import { FutureWeatherGraphComponent } from '../dashboard/widgets/graph/future-weather-graph.component';
 import { PlaceNameComponent } from '../dashboard/widgets/place-name.component';
 import SearchOverlayContainer from '../search/overlay/search-overlay.container';
 import { CurrentLocationErrorComponent } from './current-location-error.component';
 import { CurrentLocation } from './current-location.state';
-import { FutureWeatherGraphComponent } from '../dashboard/widgets/graph/future-weather-graph.component';
 
 interface Props {
     currentLocation: CurrentLocation;

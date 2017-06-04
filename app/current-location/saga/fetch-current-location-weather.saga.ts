@@ -14,7 +14,7 @@ function* fetch() {
 
         const weather: Weather = yield call(fetchWeatherByLatLng, currentLocationData.latitude, currentLocationData.longitude);
 
-        weather.query.results.channel.item.forecast.map(forecast => {
+        weather.query.results.channel.item.forecast.map((forecast) => {
             forecast.high = +forecast.high;
             forecast.low = +forecast.low;
         });

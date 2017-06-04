@@ -1,8 +1,8 @@
 import Avatar from 'material-ui/Avatar';
-import { LineChart, XAxis, Line, ResponsiveContainer } from 'recharts';
 import { darkWhite } from 'material-ui/styles/colors';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
+import { Line, LineChart, ResponsiveContainer, XAxis } from 'recharts';
 import { Weather } from '../../../common/weather.interface';
 import { WeatherIconComponent } from '../weather-icon.component';
 import { GraphCustomLabelComponent } from './graph-custom-label.component';
@@ -40,7 +40,8 @@ export class FutureWeatherGraphComponent extends React.Component<Props, any> {
                                 dataKey="day"
                                 height={60}
                                 interval={0}
-                                tick={<GraphCustomXaxisTickComponent forecast={this.props.weather.query.results.channel.item.forecast} />} />
+                                tick={<GraphCustomXaxisTickComponent
+                                    forecast={this.props.weather.query.results.channel.item.forecast} />} />
                             <Line
                                 animationDuration={1000}
                                 type="monotone"

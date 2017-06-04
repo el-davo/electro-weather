@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { darkWhite } from 'material-ui/styles/colors';
+import * as React from 'react';
 
 interface Props {
     x?: number;

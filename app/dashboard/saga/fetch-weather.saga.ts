@@ -12,7 +12,7 @@ function* fetch({ place }: { place: Place }) {
 
     yield call(delay, 500);
 
-    weather.query.results.channel.item.forecast.map(forecast => {
+    weather.query.results.channel.item.forecast.map((forecast) => {
       forecast.high = +forecast.high;
       forecast.low = +forecast.low;
     });

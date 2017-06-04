@@ -1,8 +1,8 @@
-import { getWeatherIconUnicode } from '../../../common/weather-icon-unicode.service';
-import { Forecast } from '../../../common/weather.interface';
-import * as React from 'react';
 import Avatar from 'material-ui/Avatar';
 import { darkWhite } from 'material-ui/styles/colors';
+import * as React from 'react';
+import { getWeatherIconUnicode } from '../../../common/weather-icon-unicode.service';
+import { Forecast } from '../../../common/weather.interface';
 import { WeatherIconComponent } from '../weather-icon.component';
 
 interface Props {
@@ -29,7 +29,7 @@ export class GraphCustomXaxisTickComponent extends React.Component<Props, any> {
 
         this.state = {
             icon: getWeatherIconUnicode(this.props.forecast[this.props.payload.index].code)
-        }
+        };
     }
 
     render() {

@@ -46,9 +46,9 @@ const codeMap = [
     'F013', // cloudy
     'F06B', // thunderstorm
     'F01B', // snow
-    'F06B', // thunderstorm
+    'F06B' // thunderstorm
 ];
 
 export function getWeatherIconUnicode(codeIndex: string) {
-    return codeMap[parseInt(codeIndex)];
+    return codeMap[parseInt(codeIndex, 10)];
 }

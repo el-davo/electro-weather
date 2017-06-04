@@ -3,8 +3,8 @@ import { LoadingComponent } from '../../common/loading.component';
 import { Place } from '../../search/search.state';
 import { CurrentTemperatureComponent } from '../widgets/current-temperature.component';
 import { CurrentWeatherDescriptionComponent } from '../widgets/current-weather-description.component';
-import { PlaceNameComponent } from '../widgets/place-name.component';
 import { FutureWeatherGraphComponent } from '../widgets/graph/future-weather-graph.component';
+import { PlaceNameComponent } from '../widgets/place-name.component';
 
 interface Props {
     place: Place;
