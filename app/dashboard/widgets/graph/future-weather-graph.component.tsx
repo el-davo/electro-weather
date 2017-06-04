@@ -35,21 +35,25 @@ export class FutureWeatherGraphComponent extends React.Component<Props, any> {
                 <Col xs={12} sm={12} md={12}>
                     <ResponsiveContainer width={'100%'} height={200}>
                         <LineChart width={600} height={200} data={this.props.weather.query.results.channel.item.forecast.slice(0, 5)}
-                            margin={{ top: 20, right: 10, left: 10, bottom: 0 }}>
-                            <XAxis dataKey="day" height={60} tick={<GraphCustomXaxisTickComponent forecast={this.props.weather.query.results.channel.item.forecast} />} />
+                            margin={{ top: 20, left: 20, right: 20, bottom: 0 }}>
+                            <XAxis
+                                dataKey="day"
+                                height={60}
+                                interval={0}
+                                tick={<GraphCustomXaxisTickComponent forecast={this.props.weather.query.results.channel.item.forecast} />} />
                             <Line
-                                animationDuration={1500}
+                                animationDuration={1000}
                                 type="monotone"
                                 dataKey="high"
                                 stroke={darkWhite}
-                                activeDot={{ r: 2 }}
+                                dot={{ strokeWidth: 0.5 }}
                                 label={<GraphCustomLabelComponent />} />
                             <Line
-                                animationDuration={1500}
+                                animationDuration={1000}
                                 type="monotone"
                                 dataKey="low"
                                 stroke="#82ca9d"
-                                activeDot={{ r: 2 }}
+                                dot={{ strokeWidth: 0.5 }}
                                 label={<GraphCustomLabelComponent />} />
                         </LineChart>
                     </ResponsiveContainer>
